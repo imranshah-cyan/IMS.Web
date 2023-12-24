@@ -1,0 +1,30 @@
+.tab {
+  width: 80%;
+  margin: auto;
+
+  table {
+    max-width: 80% !important;
+
+    th {
+      background-color: #CEF5E0;
+      cursor: default;
+    }
+
+    tr:hover {
+      /* border-color: currentColor; */
+      background-color: #CEF5E0;
+      cursor: pointer;
+    }
+  }
+}
+
+.rightAlign{
+  text-align: right;
+  width: 80%;
+  margin: auto;
+  margin-top: 1%;
+ }
+
+ button{
+  z-index: 1000;
+ }

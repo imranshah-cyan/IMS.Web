@@ -1,0 +1,97 @@
+<div class="containerModel">
+    <h1 *ngIf="data[0] == 'add'">Add Product</h1>
+    <h1 *ngIf="data[0] == 'view'">{{data[1].make}} {{data[1].model}} {{data[1].year}}</h1>
+    <mat-divider></mat-divider><br />
+    <div class="subContain1">
+        <table>
+            <tr>
+                <td>
+                    <h3>Name</h3>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput [(ngModel)]="name" [disabled]="data[0] === 'view' || data[0] === 'purchase' || data[0] === 'sale'" />
+                    </mat-form-field>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Description</h3>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Description</mat-label>
+                        <input matInput [(ngModel)]="description" [disabled]="data[0] === 'view' || data[0] === 'purchase' || data[0] === 'sale'"/>
+                    </mat-form-field>
+                </td>
+            </tr>           
+
+            <tr>
+                <td>
+                    <h3>Quantity</h3>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Quantity</mat-label>
+                        <input matInput [(ngModel)]="quantity" [disabled]="data[0] === 'view' || data[0] === 'purchase' || data[0] === 'sale'"/>
+                    </mat-form-field>
+                </td>
+            </tr>
+
+            <tr *ngIf="data[0] == 'sale'">
+                <td>
+                    <h3>Quantity Sold</h3>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>QuantitySold</mat-label>
+                        <input matInput [(ngModel)]="squantity"/>
+                    </mat-form-field>
+                </td>
+            </tr>
+
+            <tr *ngIf="data[0] == 'sale'">
+                <td>
+                    <h3>Sale Amount</h3>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>SaleAmount</mat-label>
+                        <input matInput [(ngModel)]="samount" />
+                    </mat-form-field>
+                </td>
+            </tr>
+
+            <tr *ngIf="data[0] == 'purchase'">
+                <td>
+                    <h3>Quantity Purchased</h3>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>QuantityPurchased</mat-label>
+                        <input matInput [(ngModel)]="pquantity" />
+                    </mat-form-field>
+                </td>
+            </tr>
+
+            <tr *ngIf="data[0] == 'purchase'">
+                <td>
+                    <h3>Purchase Amount</h3>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>PurchaseAmount</mat-label>
+                        <input matInput [(ngModel)]="pamount"/>
+                    </mat-form-field>
+                </td>
+            </tr>
+            
+        </table>
+        <button mat-raised-button color="primary" matTooltip="Add Product" matTooltipPosition="above" (click)="add()" *ngIf="data[0] == 'add'"><mat-icon>add_circle_outline</mat-icon> Add </button>
+        <button mat-raised-button color="primary" matTooltip="Update Product" matTooltipPosition="above" (click)="update()" *ngIf="data[0] == 'update'"><mat-icon>edit_circle_outline</mat-icon> Update </button>
+        <button mat-raised-button color="primary" matTooltip="Update Product" matTooltipPosition="above" (click)="sale()" *ngIf="data[0] == 'sale'"><mat-icon>edit_circle_outline</mat-icon> Sale </button>
+        <button mat-raised-button color="primary" matTooltip="Update Product" matTooltipPosition="above" (click)="purchase()" *ngIf="data[0] == 'purchase'"><mat-icon>edit_circle_outline</mat-icon> Purchase </button>
+    </div>
+</div>
