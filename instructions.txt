@@ -1,0 +1,21 @@
+Back-End-----
+
+1. Open Project "IMSSPM"
+2. Open Package Manager Console and execute following commands
+3. dotnet tool install --global dotnet-ef
+4. dotnet ef migrations add InitialCreate // you may not require this as its already included in project, however just incase
+5. dotnet ef database update
+6. Start the project in Visual Studio
+
+This will setup Database.
+
+Connection string to db is in Data/DataContext.cs file, hopefully you won't need to change it but just in case if your sql instance is not default "SQLExpress" than you may need to check in this file.
+
+-----------------
+
+Front-End ---------------------
+1. Open project folder is vs code
+2. write npm install to install required modules
+3. npm start or ng serve
+
+Api string is in enviornment folder in prod file in case your backend port is change. make the reqired change in this file.
